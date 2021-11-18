@@ -185,6 +185,8 @@ h2,h3,h4 {
 .cards {
   display: flex;
   flex-direction: column;
+  flex-direction: column;
+  object-fit: fill;
   font-family: "Epilogue", sans-serif;
   font-weight: 600;
   margin: 0 1rem;
@@ -225,7 +227,7 @@ h2,h3,h4 {
   position: absolute;
   bottom: 0;
   width: 100%;
-  color: white;
+  color: white; 
   background: linear-gradient(
     to bottom,
     transparent 0,
@@ -265,3 +267,4 @@ h2,h3,h4 {
     flex-wrap: nowrap;
   }
 }
+
