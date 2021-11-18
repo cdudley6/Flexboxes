@@ -2,7 +2,8 @@
   --button-color: #004498;
   --font-color: #333;
   --heading-color:#004498;
-  --h1-color:#0063AF;
+  --h1-color:#fff
+  /* #0063AF; */
 
 }
 /* picture img{ */
@@ -29,19 +30,27 @@ body {
   line-height: 1.5;
 
 }
-h2,
-p {
-  margin: 0 auto;
-  max-width: 40rem;
-}
 
 h2 {
   padding: 2rem 2rem;
 }
 
 p {
-  padding: 0 2rem 1rem;
   line-height: 1.5;
+}
+
+img {
+  width: 100%;
+  display: block;
+  display: center;
+
+}
+
+a {
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: var(--h1-color)
 }
 
 header {
@@ -77,21 +86,7 @@ li a {
 li a:hover {
   background-color: transparent;
 }
-h1 {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-  color: #fff;
-  text-shadow: 0 0 30px rgb(0 0 0 / 70%);
-  font-size: 3.5rem;
-  width: 100%;
-  text-align: center;
-  padding: 0 2rem;
-  color:var(--h1-color);
-  font-family: 'Epilogue', sans-serif;
-  transform: translate(-50%, -120%);
-}
+
 
 article {
   background-color: #fff;
@@ -159,6 +154,21 @@ h2,h3,h4 {
 .hero {
   position: relative; 
 }
+
+.hero h1 {
+  color: #fff;
+  text-shadow: 0 0 30px rgb(0 0 0 / 70%);
+  font-size: 3.5rem;
+  color:var(--h1-color);
+  font-family: 'Epilogue', sans-serif;
+  margin: 0;
+}
+.hero p {
+  color: var(--h1-color);
+  font-size: 2rem;
+  margin: 0;
+}
+
 .hero .overlay {
   position: absolute;
   top: 0;
@@ -166,40 +176,32 @@ h2,h3,h4 {
   right:0;
   bottom: 0;
   
-}
-img {
-  width: 100%;
-  display: block;
-  display: center;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-a {
-  cursor: pointer;
-  display: block;
-}
 
 .cards {
   display: flex;
-  object-fit: cover;
+  flex-direction: column;
   font-family: "Epilogue", sans-serif;
   font-weight: 600;
+  margin: 0 1rem;
+  gap: 1rem;
 }
 
 .card {
-  flex: 1 1 0;
+  flex: 1 1 45%;
   object-fit: cover;
-  margin-left: 1rem;
   position:relative;
+  margin-bottom: 3rem;
+  /* aspect-ratio: 1/1; */
 }
 
-.card:first-child {
-  margin-left: 0;
-}
 
 .card .image-wrapper::after {
   content: "";
-  display:flex;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -211,6 +213,11 @@ a {
 
 .card:hover .image-wrapper::after {
   background-color: transparent;
+}
+
+.card img {
+  height: 100%;
+  
 }
 
 .card .text-wrapper {
@@ -226,27 +233,6 @@ a {
   );
   padding: 3rem .5rem .75rem;
 }
-
-
-
-  .card {
-    flex: 40%;
-    margin-bottom: 0rem;
-  }
-
-  .card:nth-of-type(3) {
-    margin-left: 0;
-  }
-
-
-
-  
-  .card {
-    margin: 0 0 1rem;
-  }
-
-
-
 
 .button {
   cursor: pointer;
@@ -264,4 +250,18 @@ a {
 .button:hover{
   color: #A5D1E7;
   background-color: var(--button-color);
+}
+
+@media (min-width: 570px) {
+  .cards {
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  }
+}
+
+@media (min-width: 800px) {
+  .cards {
+    flex-wrap: nowrap;
+  }
 }
